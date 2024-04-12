@@ -88,7 +88,7 @@ def write_data(data):
     next_y = 0
     data_frame = None
 
-write_data(struct.pack("!Q",os.path.getsize(input_file)))
+write_data(struct.pack("!Q",os.path.getsize(input_file)) + struct.pack("!b",bit_power))
 with open(input_file,"rb") as open_input:
     read_data = open_input.read()
     write_data(read_data)
